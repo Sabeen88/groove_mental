@@ -1,0 +1,47 @@
+Date : 2025-04-30 10:02:06
+Directory : c:\Users\Acer Nitro5\Desktop\groove_mental\backend
+Total : 16 files,  604 codes, 104 comments, 147 blanks, all 855 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         16 |        604 |        104 |        147 |        855 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                   |         16 |        604 |        104 |        147 |        855 |
+| . (Files)                                                                           |          1 |         44 |          1 |         12 |         57 |
+| config                                                                              |          1 |         19 |          0 |          4 |         23 |
+| controllers                                                                         |          3 |        267 |         59 |         66 |        392 |
+| middleware                                                                          |          3 |         75 |          2 |         19 |         96 |
+| models                                                                              |          4 |        128 |         42 |         30 |        200 |
+| routes                                                                              |          3 |         58 |          0 |         12 |         70 |
+| utils                                                                               |          1 |         13 |          0 |          4 |         17 |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                            | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\config\db.js                     | JavaScript |         19 |          0 |          4 |         23 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\controllers\cartController.js    | JavaScript |         98 |         26 |         30 |        154 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\controllers\productController.js | JavaScript |         64 |         14 |         14 |         92 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\controllers\userController.js    | JavaScript |        105 |         19 |         22 |        146 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\middleware\authMiddleware.js     | JavaScript |         22 |          0 |          7 |         29 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\middleware\errorMiddleware.js    | JavaScript |         18 |          1 |          5 |         24 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\middleware\uploadMiddleware.js   | JavaScript |         35 |          1 |          7 |         43 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\models\adminModel.js             | JavaScript |         30 |          2 |          7 |         39 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\models\cartModel.js              | JavaScript |         31 |          0 |          5 |         36 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\models\productModel.js           | JavaScript |         29 |          1 |          4 |         34 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\models\userModel.js              | JavaScript |         38 |         39 |         14 |         91 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\routes\cartRoutes.js             | JavaScript |         20 |          0 |          4 |         24 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\routes\productRoutes.js          | JavaScript |         18 |          0 |          4 |         22 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\routes\userRoutes.js             | JavaScript |         20 |          0 |          4 |         24 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\server.js                        | JavaScript |         44 |          1 |         12 |         57 |
+| c:\Users\Acer Nitro5\Desktop\groove_mental\backend\utils\generateToken.js           | JavaScript |         13 |          0 |          4 |         17 |
+| Total                                                                               |            |        604 |        104 |        147 |        855 |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

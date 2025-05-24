@@ -103,6 +103,7 @@ const updateCartItem = asyncHandler(async (req, res) => {
 const removeItemFromCart = asyncHandler(async (req, res) => {
   const { productId } = req.params;
 
+  // Find the user's cart
   const cart = await Cart.findOne({ user: req.user._id });
 
   if (!cart) {
@@ -110,6 +111,7 @@ const removeItemFromCart = asyncHandler(async (req, res) => {
     throw new Error("Cart not found");
   }
 
+  // Check if item exists in cart
   const itemIndex = cart.items.findIndex(
     (item) => item.product.toString() === productId
   );
@@ -119,11 +121,21 @@ const removeItemFromCart = asyncHandler(async (req, res) => {
     throw new Error("Item not found in cart");
   }
 
-  // Remove the item from the cart
+  // Remove the item
   cart.items.splice(itemIndex, 1);
 
+  // Recalculate total price if needed
+  cart.totalPrice = cart.items.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+
   await cart.save();
-  res.json(cart);
+
+  res.status(200).json({
+    message: "Item removed from cart",
+    cart,
+  });
 });
 
 // @desc    Clear user's cart

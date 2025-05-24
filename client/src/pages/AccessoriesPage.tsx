@@ -41,7 +41,7 @@ const AccessoriesPage = () => {
 
   return (
     <div>
-      <h1 className="text-primary text-center">Guitars</h1>
+      <h1 className="text-primary text-center">Accessories</h1>
 
       {/* Filters */}
       <div className="flex justify-start gap-4 my-8">

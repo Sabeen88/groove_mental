@@ -166,9 +166,8 @@ export default function AddProducts() {
                   <SelectValue placeholder="Select a category" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="Drums">Drums</SelectItem>
-                  <SelectItem value="Cymbals">Cymbals</SelectItem>
-                  <SelectItem value="Hardware">Hardware</SelectItem>
+                  <SelectItem value="Guitar">Guitar</SelectItem>
+                  <SelectItem value="Bass">Bass</SelectItem>
                   <SelectItem value="Accessories">Accessories</SelectItem>
                 </SelectContent>
               </Select>

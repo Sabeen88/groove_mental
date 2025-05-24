@@ -14,10 +14,11 @@ router
   .route("/")
   .post(protect, addItemToCart)
   .get(protect, getCart)
-  .delete(protect, clearCart);
+  .delete(protect, clearCart); // ⬅️ Use correct controller here
+
 router
   .route("/:productId")
   .put(protect, updateCartItem)
-  .delete(protect, removeItemFromCart);
+  .delete(protect, removeItemFromCart); // ⬅️ For removing a specific item
 
 export default router;

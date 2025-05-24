@@ -1,0 +1,50 @@
+"filename", "language", "JSON", "JSON with Comments", "TypeScript", "TypeScript JSX", "CSS", "XML", "Markdown", "HTML", "JavaScript", "comment", "blank", "total"
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 10, 55
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\components.json", "JSON", 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\eslint.config.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 10, 18, 1, 29
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 1, 14
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\package-lock.json", "JSON", 5003, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5004
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\package.json", "JSON", 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 49
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\public\vite.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\App.css", "CSS", 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 6, 43
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\App.tsx", "TypeScript JSX", 0, 0, 0, 35, 0, 0, 0, 0, 0, 0, 3, 38
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\assets\react.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\AdminLayout.tsx", "TypeScript JSX", 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, 3, 19
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\AdminNavbar.tsx", "TypeScript JSX", 0, 0, 0, 44, 0, 0, 0, 0, 0, 4, 11, 59
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\Cart.tsx", "TypeScript JSX", 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 2, 6
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\Footer.tsx", "TypeScript JSX", 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\Layout.tsx", "TypeScript JSX", 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 3, 18
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\Navbar.tsx", "TypeScript JSX", 0, 0, 0, 56, 0, 0, 0, 0, 0, 4, 11, 71
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\containers\ProductCard.tsx", "TypeScript JSX", 0, 0, 0, 59, 0, 0, 0, 0, 0, 0, 4, 63
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\theme-provider.tsx", "TypeScript JSX", 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 17, 74
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\ui\button.tsx", "TypeScript JSX", 0, 0, 0, 54, 0, 0, 0, 0, 0, 0, 6, 60
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\ui\card.tsx", "TypeScript JSX", 0, 0, 0, 83, 0, 0, 0, 0, 0, 0, 10, 93
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\ui\input.tsx", "TypeScript JSX", 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 4, 22
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\ui\label.tsx", "TypeScript JSX", 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 4, 23
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\ui\select.tsx", "TypeScript JSX", 0, 0, 0, 171, 0, 0, 0, 0, 0, 0, 13, 184
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\components\ui\sonner.tsx", "TypeScript JSX", 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 4, 24
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\index.css", "CSS", 0, 0, 0, 0, 188, 0, 0, 0, 0, 0, 10, 198
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\lib\utils.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\main.tsx", "TypeScript JSX", 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 3, 27
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\AccessoriesPage.tsx", "TypeScript JSX", 0, 0, 0, 77, 0, 0, 0, 0, 0, 5, 11, 93
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\BassPage.tsx", "TypeScript JSX", 0, 0, 0, 77, 0, 0, 0, 0, 0, 32, 16, 125
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\Cart.tsx", "TypeScript JSX", 0, 0, 0, 55, 0, 0, 0, 0, 0, 55, 15, 125
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\GuitarPage.tsx", "TypeScript JSX", 0, 0, 0, 77, 0, 0, 0, 0, 0, 5, 11, 93
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\LoginPage.tsx", "TypeScript JSX", 0, 0, 0, 82, 0, 0, 0, 0, 0, 1, 8, 91
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\ProductsPage.tsx", "TypeScript JSX", 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 5, 33
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\RegisterPage.tsx", "TypeScript JSX", 0, 0, 0, 92, 0, 0, 0, 0, 0, 1, 5, 98
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\admin\AddProducts.tsx", "TypeScript JSX", 0, 0, 0, 110, 0, 0, 0, 0, 0, 84, 14, 208
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\admin\DisplayProducts.tsx", "TypeScript JSX", 0, 0, 0, 49, 0, 0, 0, 0, 0, 1, 5, 55
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\pages\admin\DisplayUsers.tsx", "TypeScript JSX", 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 5, 45
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\services\api.ts", "TypeScript", 0, 0, 53, 0, 0, 0, 0, 0, 0, 4, 14, 71
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\services\mutation.ts", "TypeScript", 0, 0, 36, 0, 0, 0, 0, 0, 0, 0, 5, 41
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\services\queries.ts", "TypeScript", 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 5, 31
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\store\useAuthStore.ts", "TypeScript", 0, 0, 17, 0, 0, 0, 0, 0, 0, 1, 4, 22
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\store\useCheckAuth.tsx", "TypeScript JSX", 0, 0, 0, 25, 0, 0, 0, 0, 0, 1, 5, 31
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\types\type.ts", "TypeScript", 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 3, 19
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\src\vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\tsconfig.app.json", "JSON", 20, 0, 0, 0, 0, 0, 0, 0, 0, 9, 3, 32
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\tsconfig.json", "JSON with Comments", 0, 10, 0, 0, 0, 0, 0, 0, 0, 4, 0, 14
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\tsconfig.node.json", "JSON", 18, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 25
+"c:\Users\Acer Nitro5\Desktop\groove_mental\client\vite.config.ts", "TypeScript", 0, 0, 12, 0, 0, 0, 0, 0, 0, 1, 2, 15
+"Total", "-", 5110, 10, 165, 1395, 225, 2, 45, 13, 10, 235, 272, 7482
