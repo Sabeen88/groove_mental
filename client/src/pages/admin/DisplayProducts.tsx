@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useDeleteProduct } from "@/services/mutation";
 import { useProducts } from "@/services/queries";
 import { Trash } from "lucide-react";
 
 const DisplayProducts = () => {
   const products = useProducts();
+  const deleteProduct = useDeleteProduct();
   console.log(products);
 
   if (products.isLoading) {
@@ -17,6 +19,10 @@ const DisplayProducts = () => {
     console.log(products.data);
   }
   // const data = products.data;
+
+  const handleDelete = (id: string) => {
+    deleteProduct.mutate(id);
+  };
 
   return (
     <div className="mb-12">
@@ -39,7 +45,10 @@ const DisplayProducts = () => {
               </div>
               <div className="pr-8 flex gap-4 items-center">
                 <div>Rs.{product.price}</div>
-                <Button className="bg-destructive">
+                <Button
+                  className="bg-destructive"
+                  onClick={() => handleDelete(product._id)}
+                >
                   <Trash />
                 </Button>
               </div>

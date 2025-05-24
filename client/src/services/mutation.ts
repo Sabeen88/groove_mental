@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { login, register } from "@/services/api"; // Adjust path as needed
 import { User, UserLogin } from "@/types/type"; // or wherever your User type is
 import axios from "axios";
@@ -35,6 +35,34 @@ export const useAddToCart = () => {
         withCredentials: true,
       });
       return res.data;
+    },
+  });
+};
+
+export const useDeleteProduct = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (id: string) => {
+      await axios.delete(`http://localhost:5000/api/products/${id}`);
+    },
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+    },
+  });
+};
+
+export const useDeleteUser = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (id: string) => {
+      await axios.delete(`http://localhost:5000/api/users/profile/${id}`);
+    },
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ["users"] });
     },
   });
 };

@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useDeleteUser } from "@/services/mutation";
 import { useAllUsers } from "@/services/queries";
 import { Trash, User } from "lucide-react";
 
 const DisplayUsers = () => {
   const users = useAllUsers();
+  const deleteUser = useDeleteUser();
   console.log(users);
+
+  const handleDelete = (id: string) => {
+    deleteUser.mutate(id);
+  };
 
   if (users.isLoading) {
     return <div>Loading...</div>;
@@ -29,7 +35,10 @@ const DisplayUsers = () => {
               </div>
               <div className="pr-8 flex gap-4 items-center">
                 <div>{user.email}</div>
-                <Button className="bg-destructive">
+                <Button
+                  onClick={() => handleDelete(user._id)}
+                  className="bg-destructive"
+                >
                   <Trash />
                 </Button>
               </div>
