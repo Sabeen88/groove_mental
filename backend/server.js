@@ -39,58 +39,154 @@ app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 
+// app.post("/api/khalti", async (req, res) => {
+//   const { totalPrice, items, email, name } = req.body;
+//   console.log(items)
+//   const data = {
+//     return_url: "http://localhost:5173/",
+//     website_url: "http://localhost:5173/",
+//     amount: totalPrice,
+//     purchase_order_id: Math.floor(Math.random() * 1000000).toString(),
+//     purchase_order_name: items.map((item) => item.name).join(", "),
+//     customer_info: {
+//       name: name,
+//       email: email,
+//     },
+//   };
+
+//   try {
+//     const response = await axios({
+//       method: "post",
+//       url: "https://a.khalti.com/api/v2/epayment/initiate/",
+//       data: data,
+//       headers: {
+//         Authorization: "key f3612e6f24be4030b2168a436fe347a4",
+//         "Content-Type": "application/json",
+//       },
+//     });
+
+//     res.json({ data: response.data });
+//   } catch (error) {
+//     console.error("Error from Khalti API", error.response.data);
+//     res.status(500).json({ message: "Payment failed", error: error.message });
+//   }
+// });
+// app.post("/api/khalti", async (req, res) => {
+//   const { totalPrice, items = [], email, name } = req.body;
+
+//   if (!items.length) {
+//     return res.status(400).json({ message: "No items provided for payment" });
+//   }
+
+//   const orderName = items
+//     .map((item) => item.name || item.product?.name || "Unnamed Product")
+//     .join(", ");
+
+//   const data = {
+//     return_url: "http://localhost:5173/",
+//     website_url: "http://localhost:5173/",
+//     amount: totalPrice,
+//     purchase_order_id: Math.floor(Math.random() * 1000000).toString(),
+//     purchase_order_name: orderName,
+//     customer_info: { name, email },
+//   };
+
+//   try {
+//     const response = await axios({
+//       method: "post",
+//       url: "https://a.khalti.com/api/v2/epayment/initiate/",
+//       data,
+//       headers: {
+//         Authorization: "key f3612e6f24be4030b2168a436fe347a4",
+//         "Content-Type": "application/json",
+//       },
+//     });
+    
+//     res.json({ data: response.data });
+//   } catch (error) {
+//     console.error("Error from Khalti API", error.response?.data || error.message);
+//     res.status(500).json({ message: "Payment failed", error: error.message });
+//   }
+// });
+import Cart from "./models/cartModel.js";
+
 app.post("/api/khalti", async (req, res) => {
-  const { totalPrice, items, email, name } = req.body;
+  const { totalPrice, items = [], email, name, userId } = req.body;
+
+  if (!items.length) {
+    return res.status(400).json({ message: "No items provided for payment" });
+  }
+
+  // Ensure we have proper names for purchase_order_name
+  const orderName = items
+    .map(item => item.name || item.product?.name || "Unnamed Product")
+    .join(", ");
+
+  if (!orderName.trim()) {
+    return res.status(400).json({ message: "Invalid purchase order name" });
+  }
+
+  const purchaseOrderId = Math.floor(Math.random() * 1000000).toString();
+
   const data = {
-    return_url: "http://localhost:5173/",
+    return_url: "http://localhost:5173/payment",
     website_url: "http://localhost:5173/",
-    amount: totalPrice,
-    purchase_order_id: Math.floor(Math.random() * 1000000).toString(),
-    purchase_order_name: items.map((item) => item.name).join(", "),
-    customer_info: {
-      name: name,
-      email: email,
-    },
+    amount: totalPrice * 100, // convert to paisa
+    purchase_order_id: purchaseOrderId,
+    purchase_order_name: orderName,
+    customer_info: { name, email },
   };
 
   try {
     const response = await axios({
       method: "post",
       url: "https://a.khalti.com/api/v2/epayment/initiate/",
-      data: data,
+      data,
       headers: {
         Authorization: "key f3612e6f24be4030b2168a436fe347a4",
         "Content-Type": "application/json",
       },
     });
 
+    // Save pending payment in cart
+    await Cart.findOneAndUpdate(
+      { user: userId },
+      { paymentStatus: "pending", khaltiOrderId: purchaseOrderId },
+      { new: true }
+    );
+
     res.json({ data: response.data });
   } catch (error) {
-    console.error("Error from Khalti API", error.response.data);
+    console.error("Error from Khalti API", error.response?.data || error.message);
     res.status(500).json({ message: "Payment failed", error: error.message });
   }
 });
 
+
+
+
 app.post("/api/payment", protect, async (req, res) => {
-  // const { bookingId, status } = req.body;
-  // const bookingIdInt = parseInt(bookingId, 10); // Convert bookingId to integer
+  const { status } = req.body; // expects "paid" or "failed"
 
   try {
-    // await prisma.payment.upsert({
-    //   where: { id: bookingIdInt },
-    //   update: { status },
-    //   create: {
-    //     status,
-    //     bookingId: bookingIdInt,
-    //   },
-    // });
+    // Find the cart for the logged-in user and update the payment status
+    const cart = await Cart.findOneAndUpdate(
+      { user: req.user._id },
+      { paymentStatus: status },
+      { new: true }
+    );
 
-    res.status(200).json({ message: "Payment status updated successfully." });
+    if (!cart) {
+      return res.status(404).json({ message: "Cart not found" });
+    }
+
+    res.status(200).json({
+      message: "Payment status updated successfully.",
+      cart,
+    });
   } catch (error) {
-    console.log(error);
-    res
-      .status(500)
-      .json({ error: "An error occurred while updating the payment status." });
+    console.error("Error updating payment status:", error);
+    res.status(500).json({ error: "Failed to update payment status" });
   }
 });
 

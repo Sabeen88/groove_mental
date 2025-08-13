@@ -11,6 +11,7 @@ import DisplayProducts from "./pages/admin/DisplayProducts";
 import AddProducts from "./pages/admin/AddProducts";
 import DisplayUsers from "./pages/admin/DisplayUsers";
 import AccessoriesPage from "./pages/AccessoriesPage";
+import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/bass" element={<BassPage />} />
         <Route path="/accessories" element={<AccessoriesPage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/payment" element={<PaymentSuccessPage />} />
       </Route>
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="admin/" element={<DisplayProducts />} />
