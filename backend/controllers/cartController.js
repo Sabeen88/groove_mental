@@ -5,6 +5,45 @@ import Product from "../models/productModel.js";
 // @desc    Add item to cart
 // @route   POST /api/cart
 // @access  Private
+// const addItemToCart = asyncHandler(async (req, res) => {
+//   const { productId, quantity } = req.body;
+
+//   // Check if product exists
+//   const product = await Product.findById(productId);
+//   if (!product) {
+//     res.status(404);
+//     throw new Error("Product not found");
+//   }
+
+//   // Get the cart for the user
+//   let cart = await Cart.findOne({ user: req.user._id });
+
+//   if (!cart) {
+//     // Create a new cart if not found
+//     cart = await Cart.create({
+//       user: req.user._id,
+//       items: [{ product: productId, quantity }],
+//     });
+//   } else {
+//     // Check if product is already in the cart
+//     const existingItem = cart.items.find(
+//       (item) => item.product.toString() === productId
+//     );
+
+//     if (existingItem) {
+//       // Update the quantity if the product is already in the cart
+//       existingItem.quantity += quantity;
+//     } else {
+//       // Add the product to the cart if not already in the cart
+//       cart.items.push({ product: productId, quantity });
+//     }
+
+//     // Save the cart
+//     await cart.save();
+//   }
+
+//   res.status(201).json(cart);
+// });
 const addItemToCart = asyncHandler(async (req, res) => {
   const { productId, quantity } = req.body;
 
@@ -19,31 +58,34 @@ const addItemToCart = asyncHandler(async (req, res) => {
   let cart = await Cart.findOne({ user: req.user._id });
 
   if (!cart) {
-    // Create a new cart if not found
+    // Create new cart if none exists
     cart = await Cart.create({
       user: req.user._id,
       items: [{ product: productId, quantity }],
     });
+  } else if (cart.paymentStatus === "paid") {
+    // Reset the paid cart to start a new one
+    cart.items = [{ product: productId, quantity }];
+    cart.paymentStatus = "pending"; // mark as pending for new order
+    await cart.save();
   } else {
-    // Check if product is already in the cart
+    // Existing unpaid cart: add or update item
     const existingItem = cart.items.find(
       (item) => item.product.toString() === productId
     );
 
     if (existingItem) {
-      // Update the quantity if the product is already in the cart
       existingItem.quantity += quantity;
     } else {
-      // Add the product to the cart if not already in the cart
       cart.items.push({ product: productId, quantity });
     }
 
-    // Save the cart
     await cart.save();
   }
 
   res.status(201).json(cart);
 });
+
 
 // @desc    Get user's cart
 // @route   GET /api/cart
