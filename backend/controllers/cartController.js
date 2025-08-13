@@ -54,13 +54,26 @@ const getCart = asyncHandler(async (req, res) => {
   );
 
   if (cart) {
-    // Calculate total price
-    const totalPrice = cart.items.reduce((acc, item) => {
+    // Filter out items with null/undefined products
+    const validItems = cart.items.filter(item => item.product !== null);
+    
+    // If there were invalid items, clean up the cart
+    if (validItems.length !== cart.items.length) {
+      cart.items = validItems;
+      await cart.save();
+      console.log(`Removed ${cart.items.length - validItems.length} invalid items from cart`);
+    }
+
+    // Calculate total price only for valid items
+    const totalPrice = validItems.reduce((acc, item) => {
       return acc + item.product.price * item.quantity;
     }, 0);
 
     res.json({
-      cart,
+      cart: {
+        ...cart.toObject(),
+        items: validItems
+      },
       totalPrice,
     });
   } else {

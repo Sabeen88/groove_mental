@@ -59,7 +59,7 @@ app.post("/api/khalti", async (req, res) => {
       url: "https://a.khalti.com/api/v2/epayment/initiate/",
       data: data,
       headers: {
-        Authorization: "key 1f321a829ba14e379b80dedb83327539",
+        Authorization: "key f3612e6f24be4030b2168a436fe347a4",
         "Content-Type": "application/json",
       },
     });

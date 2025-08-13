@@ -201,8 +201,6 @@ const Cart = () => {
         My Cart
       </h1>
 
-      <DebugAuth />
-
       <div className="flex flex-col gap-4">
         {items.length > 0 ? (
           items.map((item: any) => (

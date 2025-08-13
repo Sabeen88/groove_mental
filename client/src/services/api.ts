@@ -59,7 +59,12 @@ export const createProduct = async (data: any) => {
 
 // Cart
 export const getCart = async () => {
-  return await axiosInstance.get("cart", { withCredentials: true });
+  const token = localStorage.getItem("token");
+  return await axiosInstance.get("cart", { withCredentials: true,
+  headers : {
+    Authorization: `Bearer ${token}`,
+  }
+  });
 };
 
 export const addToCart = async (data: {

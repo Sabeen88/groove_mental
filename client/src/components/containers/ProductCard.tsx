@@ -22,6 +22,7 @@ export function ProductCard(product: Product) {
         },
         onError: (error: any) => {
           toast.error(error.response?.data?.message || "Failed to add to cart");
+          console.log("Error adding to cart:", error);
         },
       }
     );

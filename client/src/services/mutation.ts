@@ -29,10 +29,13 @@ export const useCreateProduct = () => {
 };
 
 export const useAddToCart = () => {
+  const token = localStorage.getItem("token");
   return useMutation({
     mutationFn: async (data: { productId: string; quantity: number }) => {
+      console.log("Token being sent:", token); // Debug log
       const res = await axios.post("http://localhost:5000/api/cart", data, {
         withCredentials: true,
+        headers: { Authorization: `Bearer ${token}` }
       });
       return res.data;
     },

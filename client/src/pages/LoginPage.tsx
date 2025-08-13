@@ -125,7 +125,8 @@ export function Login() {
         localStorage.removeItem("user");
       }
     }
-  }, [setUser, user]);
+  }, [setUser, user]
+  );
 
   useEffect(() => {
     if (user && user?.isAdmin === true) {
